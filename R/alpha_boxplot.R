@@ -73,7 +73,7 @@ alpha_boxplot <- function(alpha_div, metadata, index = "richness", groupID = "Gr
 
   # 保存统计结果
   # 保存一个制表符，解决存在行名时，列名无法对齐的问题
-  write.table(paste(date(), "\nGroup\t", groupID, "\n\t", sep=""), file=paste("alpha_boxplot_TukeyHSD.txt",sep=""),append = T, quote = F, eol = "", row.names = F, col.names = F)
+  write.table(paste(date(), "\nIndex\t", index, "\nGroup\t", groupID, "\n\t", sep=""), file=paste("alpha_boxplot_TukeyHSD.txt",sep=""),append = T, quote = F, eol = "", row.names = F, col.names = F)
   # 保存统计结果，有warning正常
   suppressWarnings(write.table(Tukey_HSD_table, file=paste("alpha_boxplot_TukeyHSD.txt",sep=""), append = T, quote = F, sep="\t", eol = "\n", na = "NA", dec = ".", row.names = T, col.names = T))
 
